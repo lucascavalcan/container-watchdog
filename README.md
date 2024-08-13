@@ -43,7 +43,14 @@ O **Container Watchdog** é uma ferramenta que monitora eventos de contêineres 
    client = docker.DockerClient(base_url='tcp://127.0.0.1:2375')
 ## Uso
 
-**Para iniciar o monitoramento, execute o script Python:**
+1. **Para iniciar o monitoramento, execute o script Python:**
 
+   ```python
+   python events.py
+O script começará a monitorar eventos de encerramento de contêineres e enviará notificações para o webhook do Discord sempre que um contêiner for encerrado.
+
+ **Exemplo de Notificação**
+
+   A mensagem enviada para o Discord terá o seguinte formato:
    ```bash
-python events.py
+   The container <container_name> (<container_id>) terminated at <date_time>
